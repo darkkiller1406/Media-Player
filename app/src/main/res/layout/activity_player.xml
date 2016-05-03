@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/ManHinh"
+    tools:context="media.playlist.Player"
+    android:background="@drawable/galaxy">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tên bài hát"
+        android:id="@+id/songName"
+        android:shadowColor="#ffffff"
+        android:textColor="#00ff90"
+        android:layout_alignBottom="@+id/media_playlist"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignTop="@+id/media_playlist"
+        android:textSize="18dp"
+        android:layout_toStartOf="@+id/songDuration"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/note"
+        android:layout_marginTop="73dp"
+        android:layout_below="@+id/songName"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignParentEnd="false"
+        android:indeterminate="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0&apos;00"
+        android:id="@+id/songStar"
+        android:layout_below="@+id/seekBar"
+        android:layout_toStartOf="@+id/seekBar"
+        android:textColor="#00ff90" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0&apos;00"
+        android:id="@+id/songDuration"
+        android:layout_below="@+id/seekBar"
+        android:layout_toEndOf="@+id/seekBar"
+        android:textColor="#00ff90" />
+
+    <ImageButton
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:id="@+id/media_pre"
+        android:onClick="previous"
+        android:background="@drawable/back"
+        android:layout_below="@+id/songStar"
+        android:layout_alignStart="@+id/seekBar"
+        android:layout_marginTop="77dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/media_play"
+        android:onClick="play"
+        android:layout_alignBottom="@+id/media_pre"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pausee"
+        android:background="@drawable/background" />
+
+    <ImageButton
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:id="@+id/media_next"
+        android:background="@drawable/forward"
+        android:onClick="next"
+        android:layout_alignBottom="@+id/media_play"
+        android:layout_toStartOf="@+id/songDuration" />
+
+    <ImageButton
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:id="@+id/media_playlist"
+        android:background="@drawable/list"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/media_Shuffle" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/media_Repeat"
+        android:onClick="repeat"
+        android:src="@drawable/repeat_a"
+        android:background="@drawable/background"
+        android:layout_alignTop="@+id/media_next"
+        android:layout_toEndOf="@+id/songDuration" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/media_Shuffle"
+        android:onClick="shuffle"
+        android:layout_alignTop="@+id/media_Repeat"
+        android:layout_toStartOf="@+id/songStar"
+        android:src="@drawable/shuffle_a"
+        android:background="@drawable/background" />
+
+</RelativeLayout>
